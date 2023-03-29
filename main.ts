@@ -1,17 +1,53 @@
-let Numero = 0
+let Dado = 0
 input.onButtonPressed(Button.A, function () {
-    Numero = 0
-    for (let index = 0; index < 10; index++) {
-        basic.pause(100)
-        basic.showNumber(Numero)
-        Numero += 1
+    Dado = randint(1, 6)
+    if (Dado == 6) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            # . . . #
+            . . . . .
+            # . . . #
+            `)
+    } else if (Dado == 5) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (Dado == 4) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (Dado == 3) {
+        basic.showLeds(`
+            . . # . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . # . .
+            `)
+    } else if (Dado == 2) {
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . . . . .
+            . . # . .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
     }
-    for (let index = 0; index < 10; index++) {
-        basic.pause(100)
-        basic.showNumber(Numero)
-        Numero += -1
-    }
-    basic.pause(100)
-    basic.showIcon(IconNames.Yes)
-    basic.clearScreen()
 })
